@@ -1,0 +1,66 @@
+@import './../../styles/fonts.scss';
+
+#benefits{
+    padding: 60px;
+    text-align: center;
+    padding-bottom: 0;
+    
+    .benefits-content{
+        display: inline-grid;
+        grid-template-columns: repeat(6, 1fr);
+        column-gap: 20px;
+        row-gap: 40px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+    }    
+
+    .benefits-title{
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .benefits-item{            
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .benefits-text{
+        margin-top: 15px;
+        margin-bottom: 5%;
+    }
+
+    .benefits-animation{
+        -webkit-transition: -webkit-transform .8s ease-in-out;
+        -ms-transition: -ms-transform .8s ease-in-out;
+        transition: transform .8s ease-in-out;
+    }
+      
+    .benefits-animation:hover{
+        transform: scale(1.2,1.2);
+        -ms-transform: scale(1.2,1.2);
+        -webkit-transform: scale(1.2,1.2);
+    }
+
+    .line{
+        height: 0px;
+        box-shadow: 0px 0px 5px 1px #ccc;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 950px) {
+    .benefits-content{
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+@media (max-width: 630px) {
+    .benefits-content{
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+@media (max-width: 430px) {
+    .benefits-content{
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+}

@@ -1,0 +1,17 @@
+
+@import './variables.scss';
+
+@font-face {
+  font-family: $primary-font;
+  src: url('./../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'MontserratSemiBold';
+    src: url('./../fonts/Montserrat/Montserrat-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'MontserratBold';
+    src: url('./../fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+}

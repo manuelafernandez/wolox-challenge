@@ -1,0 +1,64 @@
+@import './styles/fonts.scss';
+
+body{
+  font-family: $primary-font;
+  font-size: $text-size-desktop;
+}
+.color-green{
+  color: $color-green;
+}
+.color-blue{
+  color: $color-blue;
+}
+.color-white{
+  color: #fff;
+}
+.bold{
+  font-weight: bold;
+}
+.extra-bold{
+  font-family: 'MontserratBold';
+}
+.font-md{
+  font-size: 30px;
+}
+.font-lg{
+  font-size: 35px;
+}
+.zoom{
+  transition: all 0.5s ease;
+
+  &:hover{
+    transform: scale(1.2);
+  }
+}
+.fade-in-hello{
+  animation: fade 0.9s ease-in
+}
+
+@keyframes fade{
+  0%{
+      opacity: 0;
+  }
+}
+@media (max-width: 800px) {
+  .font-md{
+    font-size: 20px;
+  }
+  .font-lg{
+    font-size: 25px;
+  }
+}
+@media (max-width: 768px) {
+  body{
+    font-size: $text-size-tablet;
+  }
+}
+@media (max-width: 350px) {
+  .font-md{
+    font-size: 20px;
+  }
+  .font-lg{
+    font-size: 25px;
+  }
+}
