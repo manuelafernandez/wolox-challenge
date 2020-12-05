@@ -1,0 +1,46 @@
+@import './../../styles/fonts.scss';
+
+
+#terms {
+    background-image: url('../../assets/Backgrounds/Bg_Header@3x.png');
+    background-size: cover;
+    background-position: initial;
+    padding: 112px 60px 0 60px;
+
+    .contentTerms{
+        margin: 50px auto;
+        background: #fff;
+
+        h1{
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    #terms {
+        background-image: url('../../assets/Backgrounds/Bg_Header@2x.png');
+    }
+}
+
+@media (max-width: 600px) {
+    #terms {
+        padding: 166px 30px 0 30px;
+
+        .contentTerms{
+            margin: 0;
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    #terms {
+        background-image: url('../../assets/Backgrounds/Bg_Header.png');
+
+        .contentTerms{
+            box-shadow: none;
+            margin: 0;
+            text-align: justify;
+        }
+    }
+}

@@ -1,0 +1,135 @@
+@import './../../styles/fonts.scss';
+
+#login {
+    background-image: url('../../assets/Backgrounds/Bg_Header@3x.png');
+    padding: 112px 60px 0 60px;
+
+    .contentForm{
+        margin: 50px auto;
+        max-width: 600px;
+        background: #fff;
+
+        h1{
+            text-align: center;
+            padding-top: 30px;
+        }
+        form{
+            padding: 30px;
+            padding-top: 0;
+
+            .content-input{
+                padding: 15px 0;
+
+                label{
+                    margin-bottom: 5px;
+                }
+                label.inline{
+                    display: inline;
+                }
+                select{
+                    outline: none;
+                    width: 100%;
+                    border: 1px solid #EBF5FB;
+                    background: #EBF5FB;
+                    padding: 10px;
+
+                    &:focus{
+                        border: 1px solid $color-blue !important;
+                    }
+                }
+                input[type="checkbox"]{
+                    margin-right: 10px;
+                }
+                input{
+                    padding: 10px;
+                    border: 1px solid #EBF5FB;
+                    background: #EBF5FB;
+                    width: -webkit-fill-available;
+                    outline: none;
+                    transition: all 0.5s;
+
+                    &:focus{
+                        border: 1px solid $color-blue;
+                    }
+                }
+                span{
+                    color: #d05050;
+                    font-size: small;                
+                }
+            }
+           
+            .button-login {
+                width: 100%;
+                border-radius: 30px;
+                padding: 15px 60px;
+                border: 1px solid #00A7E8;;
+                color:#00A7E8;
+                background-color: transparent;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                font-weight: bold;
+
+                &:disabled{
+                    cursor: not-allowed;
+                }
+            }
+            .button-login-css input:hover{
+                border-radius: 30px;
+                padding: 15px 60px;
+                border: 1px solid #00A7E8;;
+                color:white;
+                background-color:#00A7E8;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                font-weight: bold;
+            }
+            
+
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    #login {
+        background-image: url('../../assets/Backgrounds/Bg_Header@2x.png');
+    }
+}
+
+@media (max-width: 600px) {
+    #login {
+        padding: 166px 30px 0 30px;
+
+        .contentForm{
+            margin: 0;
+
+            h1{
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    #login {
+        background-image: url('../../assets/Backgrounds/Bg_Header.png');
+        padding-left: 0;
+        padding-right: 0;
+
+        .contentForm{
+            box-shadow: none;
+            margin: 0;
+
+            h1{
+                padding-top: 0;
+                margin: 0;
+            }
+            form{
+                padding: 15px;
+            }
+        }
+    }
+}
