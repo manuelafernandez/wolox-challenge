@@ -1,6 +1,4 @@
-@import './../../styles/fonts.scss';
-
-#thanks{
+#footer{
     padding: 60px 15px 15px 15px;
     text-align: center;
     background-image: url('../../assets/Backgrounds/Bg_Footer@3x.png');
@@ -19,7 +17,7 @@
     }
     
     .color-blue {
-        color: #4fa6da;
+        color: #01a7e8;
     }
     
     .btn-content {
@@ -27,9 +25,9 @@
     }
     
     .btn-content > a:hover {
-        color: #00a7e8;
+        color: #01a7e8;
         background-color: white;
-        border: 1px solid #00a7e8;
+        border: 1px solid #01a7e8;
     }
     
     .title-text {
@@ -41,8 +39,8 @@
     .footer-button {
         border-radius: 30px;
         padding: 15px 60px;
-        border: 1px solid #00a7e8;
-        background-color: #00a7e8;
+        border: 1px solid #01a7e8;
+        background-color: #01a7e8;
         color: white;
         text-align: center;
         text-decoration: none;
@@ -69,15 +67,32 @@
     }
 }
     
-
-@media (max-width: 768px) {
-    #thanks{
+@media (max-width: 770px) {
+    #footer{
         background-image: url('../../assets/Backgrounds/Bg_Footer@2x.png');
+
+        .title-bold {
+            font-size: 35px;
+        }
+        .footer-title {
+            font-size: 25px;
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    #footer{
+        .title-bold {
+            font-size: 30px;
+        }
+        .footer-title {
+            font-size: 20px;
+        }
     }
 }
 
 @media (max-width: 425px) {
-    #thanks{
+    #footer{
         background-image: url('../../assets/Backgrounds/Bg_Footer.png');
     }
 }

@@ -1,10 +1,3 @@
-// @import './../../styles/fonts.scss';
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../../assets/fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
-  }
-
 #list {
     background-image: url('../../assets/Backgrounds/Bg_Header@3x.png');
     padding: 112px 60px 0 60px;
@@ -89,16 +82,6 @@
                         &:hover{
                             background: #f2f2f2;
                         }
-                        // &:last-child{
-                        //     td{
-                        //         &:last-child{
-                        //             border-bottom-right-radius: 15px;
-                        //         }
-                        //         &:first-child{
-                        //             border-bottom-left-radius: 15px;
-                        //         }
-                        //     }
-                        // }
                     }
                 }
             }
@@ -152,10 +135,5 @@
         background-image: url('../../assets/Backgrounds/Bg_Header.png');
         padding-left: 0;
         padding-right: 0;
-
-        // .contentList{
-        //     box-shadow: none;
-        //     margin: 0;
-        // }
     }
 }

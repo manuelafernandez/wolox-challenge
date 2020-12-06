@@ -1,14 +1,27 @@
-@import './styles/fonts.scss';
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'MontserratSemiBold';
+    src: url('./assets/fonts/Montserrat/Montserrat-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'MontserratBold';
+    src: url('./assets/fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+}
 
 body{
-  font-family: $primary-font;
-  font-size: $text-size-desktop;
-}
-.color-green{
-  color: $color-green;
+  font-family: 'Montserrat';
+  font-size: 16px;
 }
 .color-blue{
-  color: $color-blue;
+  color: #01a7e8;
+}
+.color-green{
+  color: #9fc739;
 }
 .color-white{
   color: #fff;
@@ -49,9 +62,9 @@ body{
     font-size: 25px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 770px) {
   body{
-    font-size: $text-size-tablet;
+    font-size: 14px;
   }
 }
 @media (max-width: 350px) {

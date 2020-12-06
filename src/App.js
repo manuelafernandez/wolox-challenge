@@ -1,7 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import generateStore from './redux/store'
-import Routing from './components/Routing/Routing'
+import Routes from './components/Routes/Routes'
 import './App.scss'
 
 function App () {
@@ -9,7 +9,7 @@ function App () {
 
   return (
     <Provider store={store}>
-      <Routing />
+      <Routes />
     </Provider>
   )
 }

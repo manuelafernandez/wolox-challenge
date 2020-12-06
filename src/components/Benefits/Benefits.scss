@@ -1,5 +1,3 @@
-@import './../../styles/fonts.scss';
-
 #benefits{
     padding: 60px;
     text-align: center;
@@ -49,18 +47,34 @@
     }
 }
 
-@media (max-width: 950px) {
-    .benefits-content{
-        grid-template-columns: repeat(3, 1fr) !important;
+@media (max-width: 850px) {
+    #benefits{
+        .benefits-content{
+            grid-template-columns: repeat(3, 1fr) !important;
+        }
     }
 }
-@media (max-width: 630px) {
-    .benefits-content{
-        grid-template-columns: repeat(2, 1fr) !important;
+@media (max-width: 730px) {
+    #benefits{
+        .benefits-content{
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+        .benefits-title{
+            font-size: 30px;
+        }
+        .benefits-text{
+            font-size: 15px;
+        }
     }
 }
-@media (max-width: 430px) {
-    .benefits-content{
-        grid-template-columns: repeat(1, 1fr) !important;
+@media (max-width: 400px) {
+    #benefits{
+        .benefits-content{
+            grid-template-columns: repeat(1, 1fr) !important;
+        }
+        .benefits-title{
+            font-size: 25px;
+            font-weight: bold;
+        }
     }
 }
