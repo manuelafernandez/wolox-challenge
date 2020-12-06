@@ -1,0 +1,7 @@
+export const COUNTRY_SELECTED = 'COUNTRY_SELECTED'
+export const LOGIN_USER = 'LOGIN_USER'
+export const SET_AUTHENTICATION = 'SET_AUTHENTICATION'
+export const SET_LIST = 'SET_LIST'
+export const SET_FILTER = 'SET_FILTER'
+export const SET_FAVORITES = 'SET_FAVORITES'
+export const SET_SORT = 'SET_SORT'

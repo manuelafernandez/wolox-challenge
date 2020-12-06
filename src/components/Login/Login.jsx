@@ -169,7 +169,7 @@ const Login = () => {
                 ref={register({ required: true })}
               />
               Acepto los{' '}
-              <a href="/TermsAndConditions" target="_blank">
+              <a href="/policies" target="_blank">
                 Terminos y condiciones
               </a>
             </label>
