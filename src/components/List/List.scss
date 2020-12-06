@@ -1,0 +1,161 @@
+// @import './../../styles/fonts.scss';
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../../assets/fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+  }
+
+#list {
+    background-image: url('../../assets/Backgrounds/Bg_Header@3x.png');
+    padding: 112px 60px 0 60px;
+
+    .contentList{
+        margin: 50px auto;
+        max-width: 1200px;       
+        background: #fff;
+       
+        h1{
+            text-align: center;
+            padding-top: 30px;
+        }
+        .contentFilters{
+            display: flex;
+            justify-content: center;
+            
+            .filter{
+                padding: 30px;
+            }
+
+            .content-input{
+                padding: 15px 0;
+
+                label{
+                    display: block;
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                }
+
+                input{
+                    padding: 10px;
+                    border: 1px solid #f2f2f2;
+                    background: #f2f2f2;
+                    width: -webkit-fill-available;
+                    outline: none;
+                    transition: all 0.5s;
+                }
+               
+                select{
+                    outline: none;
+                    width: 100%;
+                    border: 1px solid #f2f2f2;
+                    background: #f2f2f2;
+                    padding: 10px;
+                }
+            }
+        }
+        .contentTable{
+            overflow-y: auto;
+
+            table{
+                width: 100%;
+                text-align: center;
+                border-spacing: 0;
+                border: transparent;
+               
+                thead{
+                    background: #01a7e8;
+                    color: #fff;
+                    font-weight: bold;
+
+                    .sort{
+                        display: flex;
+                        cursor: pointer;
+                        
+                        img{
+                            width: 20px;
+                            margin-left: 5px;
+                        }
+                    }
+                }
+                td,th{
+                    padding: 10px;
+                }
+                tbody{
+                    img{
+                        height: 100%;
+                        max-height: 50px;
+                    }
+                    tr{
+                        &:hover{
+                            background: #f2f2f2;
+                        }
+                        // &:last-child{
+                        //     td{
+                        //         &:last-child{
+                        //             border-bottom-right-radius: 15px;
+                        //         }
+                        //         &:first-child{
+                        //             border-bottom-left-radius: 15px;
+                        //         }
+                        //     }
+                        // }
+                    }
+                }
+            }
+            .content-total{
+                text-align: center;
+                margin-top: 15px;
+                font-weight: bold;
+            }
+        }
+    }
+    .favorite{
+        width: 40px;
+        height: 40px !important;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 768px) {
+    #list {
+        background-image: url('../../assets/Backgrounds/Bg_Header@2x.png');
+    }
+}
+
+@media (max-width: 600px) {
+    #list {
+        padding: 166px 30px 0 30px;
+
+        .contentList{
+            margin: 0;
+
+            .contentFilters{
+                display: block;
+
+                .filter{
+                    padding: 10px;
+
+                    .content-input{
+                        padding: 0;
+                    }
+                }
+            }
+        }
+        h1{
+            padding: 0;
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    #list {
+        background-image: url('../../assets/Backgrounds/Bg_Header.png');
+        padding-left: 0;
+        padding-right: 0;
+
+        // .contentList{
+        //     box-shadow: none;
+        //     margin: 0;
+        // }
+    }
+}
