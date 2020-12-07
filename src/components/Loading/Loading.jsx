@@ -4,9 +4,9 @@ import './Loading.scss'
 const Loading = () => {
   return (
     <div id="contentLoading">
-        <div className="title">
-          <p>Cargando...</p>
-        </div>
+      <div className="title">
+        <p>Cargando...</p>
+      </div>
     </div>
   )
 }

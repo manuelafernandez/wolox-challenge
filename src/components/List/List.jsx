@@ -29,10 +29,10 @@ const List = () => {
 
   const handleFavorite = (id) => {
     const favorites = list.favorites
-    const positionFav = favorites.indexOf(id)
+    const pos = favorites.indexOf(id)
 
-    if (positionFav > -1) {
-      favorites.splice(positionFav, 1)
+    if (pos > -1) {
+      favorites.splice(pos, 1)
     } else {
       favorites.push(id)
     }

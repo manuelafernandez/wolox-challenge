@@ -1,41 +1,41 @@
 #terms {
-    background-image: url('../../assets/Backgrounds/Bg_Header@3x.png');
-    padding: 112px 60px 0 60px;
+  background-image: url('../../assets/Backgrounds/Bg_Header@3x.png');
+  padding: 112px 60px 0 60px;
 
-    .contentTerms{
-        margin: 50px auto;
-        background: #fff;
+  .terms-content {
+    margin: 50px auto;
+    background: #fff;
 
-        h1{
-            text-align: center;
-        }
+    h1 {
+      text-align: center;
     }
+  }
 }
 
 @media (max-width: 768px) {
-    #terms {
-        background-image: url('../../assets/Backgrounds/Bg_Header@2x.png');
-    }
+  #terms {
+    background-image: url('../../assets/Backgrounds/Bg_Header@2x.png');
+  }
 }
 
 @media (max-width: 600px) {
-    #terms {
-        padding: 166px 30px 0 30px;
+  #terms {
+    padding: 166px 30px 0 30px;
 
-        .contentTerms{
-            margin: 0;
-        }
+    .terms-content {
+      margin: 0;
     }
+  }
 }
 
 @media (max-width: 425px) {
-    #terms {
-        background-image: url('../../assets/Backgrounds/Bg_Header.png');
+  #terms {
+    background-image: url('../../assets/Backgrounds/Bg_Header.png');
 
-        .contentTerms{
-            box-shadow: none;
-            margin: 0;
-            text-align: justify;
-        }
+    .terms-content {
+      box-shadow: none;
+      margin: 0;
+      text-align: justify;
     }
+  }
 }

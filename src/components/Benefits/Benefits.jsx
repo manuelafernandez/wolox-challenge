@@ -17,30 +17,30 @@ const Benefits = () => {
         <span className="color-blue">;)</span>
       </p>
       <div className="benefits-content">
-          <div className="benefits-item">
-            <img src={IcHour} className="benefits-animation" />
-            <div className="benefits-text">Flexibilidad Horaria</div>
-          </div>
-          <div className="benefits-item">
-            <img src={IcHomeOffice} className="benefits-animation" />
-            <div className="benefits-text">Home Office</div>
-          </div>
-          <div className="benefits-item">
-            <img src={IcWorkshops} className="benefits-animation" />
-            <div className="benefits-text">Capacitaciones y workshops</div>
-          </div>
-          <div className="benefits-item">
-            <img src={IcDrinkSnacks} className="benefits-animation" />
-            <div className="benefits-text">Snacks, frutas y bebidas gratis</div>
-          </div>
-          <div className="benefits-item">
-            <img src={IcLaptop} className="benefits-animation" />
-            <div className="benefits-text">Semana Remota</div>
-          </div>
-          <div className="benefits-item">
-            <img src={IcBrain} className="benefits-animation" />
-            <div className="benefits-text">Trabajar en últimas tecnologías</div>
-          </div>
+        <div className="benefits-item">
+          <img src={IcHour} className="benefits-animation" />
+          <div className="benefits-text">Flexibilidad Horaria</div>
+        </div>
+        <div className="benefits-item">
+          <img src={IcHomeOffice} className="benefits-animation" />
+          <div className="benefits-text">Home Office</div>
+        </div>
+        <div className="benefits-item">
+          <img src={IcWorkshops} className="benefits-animation" />
+          <div className="benefits-text">Capacitaciones y workshops</div>
+        </div>
+        <div className="benefits-item">
+          <img src={IcDrinkSnacks} className="benefits-animation" />
+          <div className="benefits-text">Snacks, frutas y bebidas gratis</div>
+        </div>
+        <div className="benefits-item">
+          <img src={IcLaptop} className="benefits-animation" />
+          <div className="benefits-text">Semana Remota</div>
+        </div>
+        <div className="benefits-item">
+          <img src={IcBrain} className="benefits-animation" />
+          <div className="benefits-text">Trabajar en últimas tecnologías</div>
+        </div>
       </div>
       <div className="line"></div>
     </Section>

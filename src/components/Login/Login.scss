@@ -1,133 +1,178 @@
 #login {
-    background-image: url('../../assets/Backgrounds/Bg_Header@3x.png');
-    padding: 112px 60px 0 60px;
+  background-image: url('../../assets/Backgrounds/Bg_Header@3x.png');
+  padding: 60px 60px 0 60px;
 
-    .contentForm{
-        margin: 50px auto;
-        max-width: 600px;
-        background: #fff;
+  .content-login {
+    margin: 50px auto;
+    max-width: 600px;
+    background: #fff;
 
-        h1{
-            text-align: center;
-            padding-top: 30px;
-        }
-        form{
-            padding: 30px;
-            padding-top: 0;
-
-            .content-input{
-                padding: 15px 0;
-
-                label{
-                    margin-bottom: 5px;
-                }
-                label.inline{
-                    display: inline;
-                }
-                select{
-                    outline: none;
-                    width: 100%;
-                    border: 1px solid #EBF5FB;
-                    background: #EBF5FB;
-                    padding: 10px;
-
-                    &:focus{
-                        border: 1px solid #01a7e8 !important;
-                    }
-                }
-                input[type="checkbox"]{
-                    margin-right: 10px;
-                }
-                input{
-                    padding: 10px;
-                    border: 1px solid #EBF5FB;
-                    background: #EBF5FB;
-                    width: -webkit-fill-available;
-                    outline: none;
-                    transition: all 0.5s;
-
-                    &:focus{
-                        border: 1px solid #01a7e8;
-                    }
-                }
-                span{
-                    color: #d05050;
-                    font-size: small;                
-                }
-            }
-           
-            .button-login {
-                width: 100%;
-                border-radius: 30px;
-                padding: 15px 60px;
-                border: 1px solid #01a7e8;;
-                color:#01a7e8;
-                background-color: transparent;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                font-weight: bold;
-
-                &:disabled{
-                    cursor: not-allowed;
-                }
-            }
-            .button-login-css input:hover{
-                border-radius: 30px;
-                padding: 15px 60px;
-                border: 1px solid #01a7e8;;
-                color:white;
-                background-color:#01a7e8;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                font-weight: bold;
-            }
-            
-
-        }
+    h1 {
+      text-align: center;
+      padding-top: 10px;
     }
+    form {
+      .content-input {
+        display: flex;
+        justify-content: center;
+
+        .content-text {
+          padding: 10px;
+        }
+
+        .text {
+          padding: 10px 0;
+        }
+      }
+
+      label {
+        margin-bottom: 5px;
+      }
+
+      label.inline {
+        display: inline;
+      }
+
+      select {
+        outline: none;
+        width: 400px;
+        border: 1px solid #ebf5fb;
+        border-bottom-style: groove;
+        background: #ebf5fb;
+        padding: 10px;
+      }
+
+      input[type='checkbox'] {
+        padding: 10px;
+        width: -webkit-fill-available;
+      }
+
+      input {
+        padding: 10px;
+        border: 1px solid #ebf5fb;
+        border-bottom-style: groove;
+        background: #ebf5fb;
+        width: 400px;
+        outline: none;
+        transition: all 0.5s;
+      }
+
+      input:focus {
+        border-bottom: 3px solid #555;
+      }
+
+      span {
+        color: #d05050;
+        font-size: small;
+      }
+
+      .content-total {
+        overflow-y: auto;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+
+      .button-login {
+        width: 100%;
+        border-radius: 30px;
+        padding: 15px 60px;
+        border: 1px solid #01a7e8;
+        color: #01a7e8;
+        background-color: transparent;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: bold;
+
+        &:disabled {
+          cursor: not-allowed;
+        }
+      }
+      .button-login-css input:hover {
+        border-radius: 30px;
+        padding: 15px 60px;
+        border: 1px solid #01a7e8;
+        color: white;
+        background-color: #01a7e8;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+  }
 }
 
-@media (max-width: 768px) {
-    #login {
-        background-image: url('../../assets/Backgrounds/Bg_Header@2x.png');
+@media (max-width: 770px) {
+  #login {
+    background-image: url('../../assets/Backgrounds/Bg_Header@2x.png');
+
+    input {
+      width: 300px;
     }
+    select {
+      width: 300px;
+    }
+  }
 }
 
-@media (max-width: 600px) {
-    #login {
-        padding: 166px 30px 0 30px;
+@media (max-width: 660px) {
+  #login {
+    padding: 166px 30px 0 30px;
 
-        .contentForm{
-            margin: 0;
+    .content-login {
+      margin: 0;
 
-            h1{
-                margin: 0;
+      form {
+        margin: 0;
+
+        .content-input {
+          display: block;
+
+          .content-text {
+            padding: 10px;
+
+            .text {
+              padding: 0;
             }
+          }
         }
+
+        input {
+          width: -webkit-fill-available;
+        }
+        select {
+          width: -webkit-fill-available;
+        }
+      }
+
+      h1 {
+        margin: 0;
+      }
     }
+  }
 }
 
 @media (max-width: 425px) {
-    #login {
-        background-image: url('../../assets/Backgrounds/Bg_Header.png');
-        padding-left: 0;
-        padding-right: 0;
+  #login {
+    background-image: url('../../assets/Backgrounds/Bg_Header.png');
+    padding-left: 0;
+    padding-right: 0;
 
-        .contentForm{
-            box-shadow: none;
-            margin: 0;
+    .content-login {
+      box-shadow: none;
+      margin: 0;
 
-            h1{
-                padding-top: 0;
-                margin: 0;
-            }
-            form{
-                padding: 15px;
-            }
-        }
+      h1 {
+        padding-top: 0;
+        margin: 0;
+      }
+      form {
+        padding: 30px;
+      }
     }
+  }
 }

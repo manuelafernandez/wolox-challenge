@@ -17,7 +17,7 @@ const Social = () => {
               @Wolox
             </div>
             <div className="hover-btn">
-              <a href="https://twitter.com/Wolox" className="button-social">
+              <a href="https://twitter.com/Wolox" target="blank" className="button-social">
                 Siguenos
               </a>
             </div>

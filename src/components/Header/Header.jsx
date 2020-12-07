@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 import { useLocation } from 'react-router'
 import { useScrollSection } from 'react-scroll-section'
@@ -8,7 +8,6 @@ import './Header.scss'
 const Header = () => {
   const location = useLocation()
   const auth = useSelector((store) => store.auth)
-  const favorite = useSelector((store) => store.list)
 
   const home = useScrollSection('home')
   const benefits = useScrollSection('benefits')
@@ -21,13 +20,9 @@ const Header = () => {
   }
 
   const favorites = localStorage.getItem('favorites')
-  const total = favorites === null ? 0 : JSON.parse(favorites).length ?? 0
-  const totalFav = total > 0 ? (<span className="favorite"> Total favoritos: {total}</span>) : ('')
+  const total = favorites !== null && JSON.parse(favorites).length > 0 ? (<span className="favorite"> Total favoritos: {JSON.parse(favorites).length}</span>) : ('')
 
   const logoutOption = auth.login ? <a onClick={logout}>Logout</a> : ('')
-
-  useEffect(() => {
-  }, [favorite])
 
   return (
     <div className={'content-header'}>
@@ -60,7 +55,7 @@ const Header = () => {
             Beneficios
           </a>
           {logoutOption}
-          {totalFav}
+          {total}
           {auth.login
             ? <div className="btn-login-css">
               <a href="/list" className="button-login">
