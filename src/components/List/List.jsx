@@ -1,29 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getList, filter, sortList } from './../../redux/actions/list'
+import { getList, filter, sortList, setFavorites } from './../../redux/actions/list'
 import './List.scss'
 
 const List = () => {
-  const token = localStorage.getItem('token')
-  if (token === null) {
-    window.location.href = '/'
-  }
-
   const dispatch = useDispatch()
   const list = useSelector((store) => store.list)
 
-  const [name, setName] = useState('')
-  const [type, setType] = useState('')
+  const [searchName, setSearchName] = useState('')
+  const [searchType, setSearchType] = useState('')
   const [selectedOption, setSelectedOption] = useState('asc')
 
   const handleFilter = (option, value) => {
     if (option === 'name') {
-      setName(value)
-      dispatch(filter(value, type))
+      setSearchName(value)
+      dispatch(filter(value, searchType))
     }
     if (option === 'type') {
-      setType(value)
-      dispatch(filter(name, value))
+      setSearchType(value)
+      dispatch(filter(searchName, value))
     }
   }
 
@@ -32,16 +27,37 @@ const List = () => {
     setSelectedOption(changeEvent.target.value)
   }
 
+  const handleFavorite = (id) => {
+    const favorites = list.favorites
+    const positionFav = favorites.indexOf(id)
+
+    if (positionFav > -1) {
+      favorites.splice(positionFav, 1)
+    } else {
+      favorites.push(id)
+    }
+
+    localStorage.setItem('favorites', JSON.stringify(favorites))
+    dispatch(setFavorites(favorites))
+  }
+
   useEffect(() => {
+    const favorites = localStorage.getItem('favorites')
+    if (favorites === null) {
+      localStorage.setItem('favorites', JSON.stringify([]))
+    } else {
+      dispatch(setFavorites(JSON.parse(favorites)))
+    }
+
     dispatch(getList())
   }, [])
 
   return (
     <div id="list" data-testid="email">
-      <div className="contentList">
-        <h1>Lista de tecnologías</h1>
+      <div className="content-list">
+        <h1>Listado</h1>
 
-        <div className="contentFilters">
+        <div className="content-filters">
           <div className="filter">
             <div className="content-input">
               <label>Filtrar por nombre de tecnología</label>
@@ -60,23 +76,30 @@ const List = () => {
             </div>
           </div>
           <div className="filter">
-          <div className="content-input">
-            <label>Ordenar</label>
-            <input type="radio" id="asc" name="asc" value="asc"
-                  checked={selectedOption === 'asc'}
-                  onClick={handleOptionChange}/>
+            <div className="content-input">
+              <label>Ordenar</label>
+              <input type="radio" id="asc" name="asc" value="asc"
+                checked={selectedOption === 'asc'}
+                onClick={handleOptionChange} />
             Asc
 
             <input type="radio" id="desc" name="desc" value="desc"
-                  checked={selectedOption === 'desc'}
-                  onClick={handleOptionChange}/>
+                checked={selectedOption === 'desc'}
+                onClick={handleOptionChange} />
             Desc
           </div>
           </div>
         </div>
-        <div className="contentTable">
+        <div className="content-table">
           <table>
             <thead>
+              <tr>
+                {list.favorites.length !== 0 && (
+                  <th className="thead" colSpan="8">
+                    Total de tecnologías favoritas: {list.favorites.length}
+                  </th>
+                )}
+              </tr>
               <tr className="extra-bold">
                 <th>Logo</th>
                 <th>Tecnología</th>
@@ -85,13 +108,14 @@ const List = () => {
                 <th>Licencia</th>
                 <th>Lenguaje</th>
                 <th>Tipo</th>
+                <th>Favorito</th>
               </tr>
             </thead>
             <tbody>
               {list.filterList.map((item, index) => (
-                <tr key={`${item.author}-${item.tech}`}>
+                <tr key={`${item.tech}`}>
                   <td>
-                    <img src={item.logo} className="logo zoom" />
+                    <img src={item.logo} />
                   </td>
                   <td>{item.tech}</td>
                   <td>{item.year}</td>
@@ -99,21 +123,40 @@ const List = () => {
                   <td>{item.license}</td>
                   <td>{item.language}</td>
                   <td>{item.type}</td>
+                  <td>
+                    {
+                      (list.favorites.indexOf(`${item.tech}`) > -1)
+                        ? <input
+                          type="checkbox"
+                          className="favorite"
+                          onClick={(e) => handleFavorite(`${item.tech}`)}
+                          checked
+                        />
+                        : <input
+                          type="checkbox"
+                          className="favorite"
+                          onClick={(e) => handleFavorite(`${item.tech}`)}
+                        />
+                    }
+
+                  </td>
                 </tr>
               ))}
 
               {list.filterList.length === 0 && (
                 <tr>
-                  <td colSpan="7">
+                  <td colSpan="8">
                     No se encontraron tecnologías
                   </td>
                 </tr>
               )}
+              <tr>
+                <th className="thead" colSpan="8">
+                  Total de tecnologías: {list.filterList.length}
+                </th>
+              </tr>
             </tbody>
           </table>
-          <div className="content-total">
-            Total de tecnologías: {list.filterList.length}
-          </div>
         </div>
       </div>
     </div>

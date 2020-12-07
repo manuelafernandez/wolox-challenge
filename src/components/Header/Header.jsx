@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useLocation } from 'react-router'
 import { useScrollSection } from 'react-scroll-section'
@@ -8,6 +8,7 @@ import './Header.scss'
 const Header = () => {
   const location = useLocation()
   const auth = useSelector((store) => store.auth)
+  const favorite = useSelector((store) => store.list)
 
   const home = useScrollSection('home')
   const benefits = useScrollSection('benefits')
@@ -19,12 +20,21 @@ const Header = () => {
     window.location.href = '/'
   }
 
-  const logoutOption = auth.login ? <a onClick={logout}>Salir</a> : ''
+  const favorites = localStorage.getItem('favorites')
+  const total = favorites === null ? 0 : JSON.parse(favorites).length ?? 0
+  const totalFav = total > 0 ? (<span className="favorite"> Total favoritos: {total}</span>) : ('')
+
+  const logoutOption = auth.login ? <a onClick={logout}>Logout</a> : ('')
+
+  useEffect(() => {
+  }, [favorite])
 
   return (
     <div className={'content-header'}>
       <div className="content-logo">
-        <img src={WoloxHeader} alt="WoloxLogo" className="logo logo-animation"/>
+        <a href="/" className="button-login">
+          <img src={WoloxHeader} alt="WoloxLogo" className="logo logo-animation" />
+        </a>
       </div>
 
       {location.pathname === '/' && (
@@ -50,31 +60,25 @@ const Header = () => {
             Beneficios
           </a>
           {logoutOption}
-          {auth.login === false && (
-            <div className="btn-login-css">
-              <a href="/Register" className="button-login">
+          {totalFav}
+          {auth.login
+            ? <div className="btn-login-css">
+              <a href="/list" className="button-login">
+                Tecnologías
+            </a>
+            </div>
+            : <div className="btn-login-css">
+              <a href="/login" className="button-login">
                 Login
               </a>
             </div>
-          )}
-          {auth.login && (
-            <div className="btn-login-css">
-              <a href="/List" className="button-login">
-                Tecnologías
-              </a>
-            </div>
-          )}
+          }
         </div>
       )}
 
       {location.pathname !== '/' && (
         <div className="content-actions">
           {logoutOption}
-          <div className="btn-login-css">
-            <a href="/" className="button-login">
-              Volver
-            </a>
-          </div>
         </div>
       )}
     </div>

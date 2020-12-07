@@ -3,14 +3,14 @@ import { useDispatch } from 'react-redux'
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom'
 import { setAutentication } from '../../redux/actions/auth'
 import { ScrollingProvider } from 'react-scroll-section'
-import Loading from './../Loading/Loading'
-const Header = React.lazy(() => import('./../Header/Header'))
-const Landing = React.lazy(() => import('./../Landing/Landing'))
-const Login = React.lazy(() => import('./../Login/Login'))
-const Terms = React.lazy(() => import('./../Terms/Terms'))
-const List = React.lazy(() => import('./../List/List'))
+import Loading from '../Loading/Loading'
+const Header = React.lazy(() => import('../Header/Header'))
+const Landing = React.lazy(() => import('../Landing/Landing'))
+const Login = React.lazy(() => import('../Login/Login'))
+const Terms = React.lazy(() => import('../Terms/Terms'))
+const List = React.lazy(() => import('../List/List'))
 
-function Routing () {
+function Routes () {
   const dispatch = useDispatch()
 
   const token = localStorage.getItem('token')
@@ -46,4 +46,4 @@ function Routing () {
   )
 }
 
-export default Routing
+export default Routes
