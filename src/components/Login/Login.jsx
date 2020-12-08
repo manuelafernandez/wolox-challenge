@@ -70,7 +70,7 @@ const Login = () => {
           <div className="content-input">
             <div className="content-text">
               <div className="text">
-                <label>Pais</label>
+                <label>País</label>
                 <select
                   name="country"
                   ref={register({ required: true })}
