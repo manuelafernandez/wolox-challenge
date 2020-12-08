@@ -35,3 +35,4 @@ Para el deploy se utilizó Firebase Hosting: [Wolox Challenge](https://wolox-cha
 ## TODO's
 
 - Test de componente de listado con Jest y react testing library
+- Error Boundaries
