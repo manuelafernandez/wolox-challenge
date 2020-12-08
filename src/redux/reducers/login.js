@@ -1,28 +1,21 @@
 import * as actionTypes from '../actions/actionTypes'
 
-const initData = {
-  userInfo: {
+const initialData = {
+  user: {
     name: '',
-    surname: '',
+    last_name: '',
     country: '',
     province: '',
-    email: '',
+    mail: '',
     phone: '',
-    password: '',
-    terms: false,
-    token: ''
-  },
-  countrySelected: ''
+    password: ''
+  }
 }
 
-export default function reducer (state = initData, action = []) {
+export default function reducer (state = initialData, action = []) {
   switch (action.type) {
-    case actionTypes.COUNTRY_SELECTED:
-      return { ...state, countrySelected: action.countrySelected }
-
-    case actionTypes.LOGIN_USER:
-      return { ...state, userInfo: action.userInfo }
-
+    case actionTypes.SET_USER:
+      return { ...state, login: action.user }
     default:
       return state
   }

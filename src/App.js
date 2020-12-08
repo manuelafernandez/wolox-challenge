@@ -1,7 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import generateStore from './redux/store'
-import Routes from './components/Routes/Routes'
+import Routes from './routes/Routes'
 import './App.scss'
 
 function App () {

@@ -1,14 +1,13 @@
 import React, { useEffect, Suspense } from 'react'
 import { useDispatch } from 'react-redux'
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom'
-import { setAutentication } from '../../redux/actions/auth'
+import { setAutentication } from '../redux/actions/auth'
 import { ScrollingProvider } from 'react-scroll-section'
-import Loading from '../Loading/Loading'
-const Header = React.lazy(() => import('../Header/Header'))
-const Landing = React.lazy(() => import('../Landing/Landing'))
-const Login = React.lazy(() => import('../Login/Login'))
-const Terms = React.lazy(() => import('../Terms/Terms'))
-const List = React.lazy(() => import('../List/List'))
+const Header = React.lazy(() => import('../components/Header/Header'))
+const Landing = React.lazy(() => import('../components/Landing/Landing'))
+const Login = React.lazy(() => import('../components/Login/Login'))
+const Terms = React.lazy(() => import('../components/Terms/Terms'))
+const List = React.lazy(() => import('../components/List/List'))
 
 function Routes () {
   const dispatch = useDispatch()
@@ -23,7 +22,7 @@ function Routes () {
   return (
     <BrowserRouter>
       <ScrollingProvider>
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={<div>Cargando...</div>}>
           <Header />
           <Switch>
             <Route exact path="/" component={Landing} />

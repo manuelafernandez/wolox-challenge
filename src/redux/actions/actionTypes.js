@@ -1,5 +1,4 @@
-export const COUNTRY_SELECTED = 'COUNTRY_SELECTED'
-export const LOGIN_USER = 'LOGIN_USER'
+export const SET_USER = 'SET_USER'
 export const SET_AUTHENTICATION = 'SET_AUTHENTICATION'
 export const SET_LIST = 'SET_LIST'
 export const SET_FILTER = 'SET_FILTER'

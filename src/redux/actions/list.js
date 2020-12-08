@@ -1,14 +1,10 @@
 import * as actionTypes from './actionTypes'
 
-const headers = new Headers({
-  'Content-Type': 'application/json'
-})
-
-export const GetList = async () => {
+export const Get = async () => {
   try {
     const response = await fetch('https://private-8e8921-woloxfrontendinverview.apiary-mock.com/techs', {
       method: 'GET',
-      headers
+      headers: { 'Content-Type': 'application/json' }
     })
 
     return await response.json()
@@ -25,7 +21,7 @@ export const setFavorites = (favorites) => (dispatch, getState) => {
 }
 
 export const getList = () => async (dispatch, getState) => {
-  const list = await GetList()
+  const list = await Get()
   const listSort = sortArray(list, 'tech', 'ASC')
 
   dispatch({
