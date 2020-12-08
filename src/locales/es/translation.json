@@ -1,0 +1,39 @@
+{
+    "header": {
+      "home": "Inicio",
+      "benefits": "Beneficios",
+      "login": "Registrarse",
+      "logout": "Salir",
+      "tech": "Tecnologías",
+      "fav": "Favoritos: "
+    },
+    "home":{
+      "title1": "Bienvenido a tu ",
+      "title2": "Entrevista Técnica ",
+      "title3": "en ",
+      "title4": "Wolox"
+    },
+    "social":{
+      "buttonFollow": "Siguenos",
+      "title1": "Trabajamos para ",
+      "title2": "convertir ",
+      "title3": "ideas ",
+      "title4": "en ",
+      "title5": "productos."
+    },
+    "benefits": {
+      "title": "Entre los beneficios que ofrecemos se encuentran ",
+      "benefit1": "Flexibilidad Horaria",
+      "benefit2": "Home Office",
+      "benefit3": "Capacitaciones y workshops",
+      "benefit4": "Snacks, frutas y bebidas gratis",
+      "benefit5": "Semana remota",
+      "benefit6": "Trabajar en últimas tecnologías"
+    },
+    "footer":{
+      "title1": "Gracias por ",
+      "title2": "completar el ejercicio",
+      "subTitle": "Te invitamos a ver más información",
+      "footerButton": "Conocer más"
+    }
+  }

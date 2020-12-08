@@ -1,8 +1,12 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
+
 import twitter from './../../assets/twitter.png'
 import './Social.scss'
 
 const Social = () => {
+  const [t] = useTranslation()
+
   return (
     <section id="social">
       <div className="woloxer">
@@ -18,7 +22,7 @@ const Social = () => {
             </div>
             <div className="hover-btn">
               <a href="https://twitter.com/Wolox" target="blank" className="button-social">
-                Siguenos
+                {t('social.buttonFollow')}
               </a>
             </div>
           </div>
@@ -26,11 +30,11 @@ const Social = () => {
       </div>
       <div className="content-text bold fade-in-hello">
         <div className="font-md">
-          Trabajamos para
+          {t('social.title1')}
           <br />
-          <span className="extra-bold color-blue">convertir </span>
-          <span className="extra-bold color-green">ideas</span> en <br />
-          productos.
+          <span className="extra-bold color-blue">  {t('social.title2')} </span>
+          <span className="extra-bold color-green">  {t('social.title3')}</span>   {t('social.title4')} <br />
+          {t('social.title5')}
         </div>
       </div>
     </section>

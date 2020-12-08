@@ -1,0 +1,40 @@
+{
+    "header": {
+      "home": "Home",
+      "benefits": "Benefits",
+      "login": "Login",
+      "logout": "Logout",
+      "tech": "Technologies",
+      "fav": "Likes: "
+    },
+    "home":{
+      "title1": "Welcome to your ",
+      "title2": "Technical Interview ",
+      "title3": "at ",
+      "title4": "Wolox"
+    },
+    "social":{
+      "buttonFollow": "Follow Us",
+      "title1": "We work to ",
+      "title2": "turn ",
+      "title3": "ideas ",
+      "title4": "into ",
+      "title5": "products."
+    },
+    "benefits": {
+      "title": "Among the benefits we offer are ",
+      "benefit1": "Flexible schedule",
+      "benefit2": "Home Office",
+      "benefit3": "Trainings and workshops",
+      "benefit4": "Free snacks, fruits and drinks",
+      "benefit5": "Remote Week",
+      "benefit6": "Work on latest technologies"
+    },
+    "footer":{
+      "title1": "Thank you for ",
+      "title2": "completing the exercise",
+      "subTitle": "We invite you to see more information",
+      "footerButton": "Know more"
+    },
+    "goAppButton": "Go App"
+  }

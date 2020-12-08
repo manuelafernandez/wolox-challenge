@@ -3,9 +3,21 @@ import { useSelector } from 'react-redux'
 import { useLocation } from 'react-router'
 import { useScrollSection } from 'react-scroll-section'
 import WoloxHeader from './../../assets/logo_full_color.svg'
+import { useTranslation } from 'react-i18next'
+import spanish from './../../assets/spanish.svg'
+import english from './../../assets/english.svg'
 import './Header.scss'
 
 const Header = () => {
+  const [t, i18n] = useTranslation()
+
+  const actualLanguage = i18n.language
+  const toLang = actualLanguage === 'es' ? 'en' : 'es'
+
+  const handleChangeLanguage = (lang) => {
+    i18n.changeLanguage(lang)
+  }
+
   const location = useLocation()
   const auth = useSelector((store) => store.auth)
 
@@ -20,9 +32,9 @@ const Header = () => {
   }
 
   const favorites = localStorage.getItem('favorites')
-  const total = favorites !== null && JSON.parse(favorites).length > 0 ? (<span className="favorite"> Total favoritos: {JSON.parse(favorites).length}</span>) : ('')
+  const total = favorites !== null && JSON.parse(favorites).length > 0 ? (<span className="favorite"> {t('header.fav')} {JSON.parse(favorites).length}</span>) : ('')
 
-  const logoutOption = auth.login ? <a onClick={logout}>Logout</a> : ('')
+  const logoutOption = auth.login ? <a onClick={logout}>{t('header.logout')}</a> : ('')
 
   return (
     <div className={'content-header'}>
@@ -42,7 +54,7 @@ const Header = () => {
               home.onClick()
             }}
           >
-            Inicio
+            {t('header.home')}
           </a>
           <a
             selected={benefits.selected}
@@ -52,22 +64,30 @@ const Header = () => {
               benefits.onClick()
             }}
           >
-            Beneficios
+            {t('header.benefits')}
           </a>
           {logoutOption}
           {total}
           {auth.login
             ? <div className="btn-login-css">
               <a href="/list" className="button-login">
-                Tecnologías
+              {t('header.tech')}
             </a>
             </div>
             : <div className="btn-login-css">
               <a href="/login" className="button-login">
-                Login
+              {t('header.login')}
               </a>
             </div>
           }
+          <a
+            onClick={() => handleChangeLanguage(toLang)}
+          >
+            <img
+              className="languageFlag"
+              src={(toLang === 'es' ? spanish : english)}
+            />
+          </a>
         </div>
       )}
 
