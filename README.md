@@ -22,10 +22,7 @@ npm start
 - Linter ESLint
 - i18n
 
-- Flexbox
-- CSS Grid
-- SCSS
-- Responsive hasta 300px
+- Flexbox/CSS Grid/SCSS
 
 (*) Para el REGISTRO no se pudo realizar correctamente el envio de datos al endpoint dado para obtener el token. Se probaron diferentes alternativas como Fetch, Axios, XMLHttpRequest, pero ninguna tuvo éxito. Se probó en Postman enviar datos al endpoint y se obtuvo el resultado esperado.
 
