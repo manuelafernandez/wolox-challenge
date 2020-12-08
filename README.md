@@ -31,7 +31,7 @@ npm start
 
 ## Deploy
 
-Para el deploy se utilizó Firebase Hosting: [wolox-challenge] (https://wolox-challenge-b6afd.web.app/)
+Para el deploy se utilizó Firebase Hosting: [Wolox Challenge](https://wolox-challenge-b6afd.web.app/)
 
 ## TODO's
 
