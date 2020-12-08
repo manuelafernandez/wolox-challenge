@@ -1,21 +1,18 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
-import { COUNTRIES, PROVINCES } from '../../utils/constants'
-import { loginUser, setCountrySelected } from '../../redux/actions/login'
+import { PROVINCES } from '../../utils/constants'
+import { loginUser } from '../../redux/actions/login'
 import './Login.scss'
 
 const Login = () => {
   const dispatch = useDispatch()
-  const { register, handleSubmit, watch, setValue, trigger, errors, formState } = useForm({ mode: 'all' })
+  const { register, handleSubmit, watch, trigger, errors, formState } = useForm({ mode: 'all' })
 
-  const countrySelect = useSelector((store) => store.login.countrySelected)
-  const provinces = (typeof PROVINCES[countrySelect] !== 'undefined') ? PROVINCES[countrySelect].provinces : []
+  const [provinces, setProvince] = useState([])
 
-  const onSubmit = (data) => {
-    delete data.pwd_repeat
-    dispatch(loginUser(data))
-    window.location.href = '/list'
+  const changeCountry = (event) => {
+    setProvince(PROVINCES[event.target.value].provinces)
   }
 
   const handleValidation = (object) => {
@@ -33,9 +30,11 @@ const Login = () => {
     }
   }
 
-  const getProvince = () => {
-    setValue('province', '', true)
-    dispatch(setCountrySelected(watch('country')))
+  const onSubmit = (data) => {
+    delete data.pwd_repeat
+    delete data.terms
+    dispatch(loginUser(data))
+    window.location.href = '/list'
   }
 
   return (
@@ -51,7 +50,6 @@ const Login = () => {
                   name="name"
                   maxLength="30"
                   ref={register({ required: true })}
-                  required
                 />
                 {handleValidation(errors.name)}
               </div>
@@ -60,12 +58,11 @@ const Login = () => {
               <div className="text">
                 <label>Apellido</label>
                 <input
-                  name="surname"
+                  name="last_name"
                   maxLength="30"
                   ref={register({ required: true })}
-                  required
                 />
-                {handleValidation(errors.surname)}
+                {handleValidation(errors.last_name)}
               </div>
             </div>
           </div>
@@ -77,14 +74,14 @@ const Login = () => {
                 <select
                   name="country"
                   ref={register({ required: true })}
-                  onChange={getProvince}
+                  onChange={changeCountry}
                 >
                   <option value=""></option>
-                  {COUNTRIES.map((country) => (
-                    <option key={country.id} value={country.id}>
-                      {country.country}
-                    </option>
-                  ))}
+                  <option key='ar' value='ar'>Argentina</option>
+                  <option key='ch' value='ch'>Chile</option>
+                  <option key='co' value='co'>Colombia</option>
+                  <option key='me' value='me'>México</option>
+                  <option key='pe' value='pe'>Perú</option>
                 </select>
                 {handleValidation(errors.country)}
               </div>
@@ -94,8 +91,8 @@ const Login = () => {
                 <label>Provincia/Departamento</label>
                 <select name="province" ref={register({ required: true })}>
                   <option value=""></option>
-                  {provinces.map((province, index) => (
-                    <option key={index} value={province.id}>
+                  {provinces.map((province) => (
+                    <option key={province.id} value={province.id}>
                       {province.province}
                     </option>
                   ))}
@@ -110,7 +107,7 @@ const Login = () => {
               <div className="text">
                 <label>Email</label>
                 <input
-                  name="email"
+                  name="mail"
                   ref={register({
                     required: true,
                     pattern: {
@@ -120,7 +117,7 @@ const Login = () => {
                   })}
                   required
                 />
-                {handleValidation(errors.email)}
+                {handleValidation(errors.mail)}
               </div>
             </div>
             <div className="content-text">
@@ -131,7 +128,6 @@ const Login = () => {
                   type="number"
                   maxLength="10"
                   ref={register({ required: true })}
-                  required
                 />
                 <span>{errors.phone?.message}</span>
               </div>
@@ -155,7 +151,6 @@ const Login = () => {
                       value: 6
                     }
                   })}
-                  required
                 />
                 {handleValidation(errors.password)}
               </div>
@@ -170,7 +165,6 @@ const Login = () => {
                     required: true,
                     validate: (value) => value === watch('password')
                   })}
-                  required
                 />
                 {handleValidation(errors.pwd_repeat)}
               </div>

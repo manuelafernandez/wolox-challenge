@@ -1,26 +1,16 @@
-export const COUNTRIES = [
-  { id: 'ar', country: 'Argentina' },
-  { id: 'ch', country: 'Chile' },
-  { id: 'co', country: 'Colombia' },
-  { id: 'bo', country: 'México' },
-  { id: 'br', country: 'Perú' }
-]
-
 export const PROVINCES = {
   ar: {
     id: 'ar',
-    country: 'Argentina',
     provinces: [
-      { id: 'arg_ba', province: 'Buenos Aires' },
-      { id: 'arg_co', province: 'Córdoba' },
-      { id: 'arg_sf', province: 'Santa Fe' },
-      { id: 'arg_me', province: 'Mendoza' },
-      { id: 'arg_ch', province: 'Chaco' }
+      { id: 'ar_ba', province: 'Buenos Aires' },
+      { id: 'ar_co', province: 'Córdoba' },
+      { id: 'ar_sf', province: 'Santa Fe' },
+      { id: 'ar_me', province: 'Mendoza' },
+      { id: 'ar_ch', province: 'Chaco' }
     ]
   },
   ch: {
     id: 'ch',
-    country: 'Chile',
     provinces: [
       { id: 'ch_ta', province: 'Tarapacá' },
       { id: 'ch_an', province: 'Antofagasta' },
@@ -31,7 +21,6 @@ export const PROVINCES = {
   },
   co: {
     id: 'co',
-    country: 'Colombia',
     provinces: [
       { id: 'co_bo', province: 'Bolívar' },
       { id: 'co_by', province: 'Boyacá' },
@@ -40,26 +29,24 @@ export const PROVINCES = {
       { id: 'co_ma', province: 'Magdalena' }
     ]
   },
-  bo: {
-    id: 'bo',
-    country: 'Bolivia',
+  me: {
+    id: 'me',
     provinces: [
-      { id: 'bo_lp', province: 'La Paz' },
-      { id: 'bo_ch', province: 'Chuquisaca' },
-      { id: 'bo_co', province: 'Cochabamba' },
-      { id: 'bo_or', province: 'Oruro' },
-      { id: 'bo_po', province: 'Potosí' }
+      { id: 'me_ag', province: 'Aguascalientes' },
+      { id: 'me_ch', province: 'Chihuahua' },
+      { id: 'me_df', province: 'Distrito Federal' },
+      { id: 'me_me', province: 'México' },
+      { id: 'me_pu', province: 'Puebla' }
     ]
   },
-  br: {
-    id: 'br',
-    country: 'Brasil',
+  pe: {
+    id: 'pe',
     provinces: [
-      { id: 'br_am', province: 'Amazonas' },
-      { id: 'br_mg', province: 'Minas Gerais' },
-      { id: 'br_pa', province: 'Para' },
-      { id: 'br_rj', province: 'Río de Janeiro' },
-      { id: 'br_sp', province: 'São Paulo' }
+      { id: 'pe_am', province: 'Amazonas' },
+      { id: 'pe_ar', province: 'Arequipa' },
+      { id: 'pe_cu', province: 'Cusco' },
+      { id: 'pe_li', province: 'Lima' },
+      { id: 'pe_tu', province: 'Tumbes' }
     ]
   }
 }
