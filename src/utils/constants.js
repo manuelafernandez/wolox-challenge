@@ -25,7 +25,7 @@ export const PROVINCES = {
       { id: 'co_bo', province: 'Bolívar' },
       { id: 'co_by', province: 'Boyacá' },
       { id: 'co_ca', province: 'Caldas' },
-      { id: 'co_ca', province: 'Cauca' },
+      { id: 'co_cu', province: 'Cauca' },
       { id: 'co_ma', province: 'Magdalena' }
     ]
   },
